@@ -1,7 +1,9 @@
 #!/bin/bash
-
 # Detener en caso de error
 set -e
+
+# Moverse al directorio donde reside el script
+cd "$(dirname "$0")"
 
 echo "🚀 Iniciando despliegue de Algorah..."
 
