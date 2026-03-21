@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollProgress = document.getElementById('scroll-progress');
     const timelineBall = document.getElementById('timeline-ball');
     const timeline = document.querySelector('.timeline');
+    const yearSpan = document.getElementById('current-year');
+
+    // 0. Set Current Year
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 
     let ticking = false;
 
@@ -99,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.section-header, .solutions-grid, .timeline, .testimonial-card, .cta-content, .diff-grid, .tech-grid, .cases-grid, .founder-content').forEach(el => {
+    document.querySelectorAll('.section-header, .solutions-grid, .timeline, .testimonial-card, .cta-content, .diff-grid, .tech-grid, .cases-slider-container, .founder-content').forEach(el => {
         el.classList.add('reveal-on-scroll');
         revealObserver.observe(el);
     });
@@ -174,68 +180,82 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // 8. Cases Slider Logic - Versión Infinito
+    // 8. Cases Slider Logic - Versión Blindada e Infinita
     const track = document.getElementById('cases-track');
     const nextBtn = document.getElementById('cases-next');
     const prevBtn = document.getElementById('cases-prev');
-    const originalCards = document.querySelectorAll('.case-card');
     
-    if (track && nextBtn && prevBtn && originalCards.length > 0) {
-        let currentIndex = 0;
-        const totalOriginal = originalCards.length;
+    if (track && nextBtn && prevBtn) {
+        // Limpiar clones previos si existen (útil en HMR)
+        track.querySelectorAll('.clone').forEach(c => c.remove());
         
-        // Clonar los primeros 2 para el final
-        const clones = [];
-        for (let i = 0; i < 2; i++) {
+        const originalCards = track.querySelectorAll('.case-card');
+        if (originalCards.length === 0) return;
+
+        const totalOriginal = originalCards.length;
+        let isMoving = false;
+        
+        // Clonación para Infinito Real
+        const lastClone = originalCards[totalOriginal - 1].cloneNode(true);
+        lastClone.classList.add('clone');
+        track.insertBefore(lastClone, originalCards[0]);
+        
+        const clonesToAppend = 2; // Suficientes para cubrir el desfase de transición
+        for (let i = 0; i < clonesToAppend; i++) {
             const clone = originalCards[i].cloneNode(true);
+            clone.classList.add('clone');
             track.appendChild(clone);
-            clones.push(clone);
         }
 
         const allCards = track.querySelectorAll('.case-card');
+        let currentIndex = 1; // Empezamos en la primera original (índice 1 por el clon inicial)
 
-        function getCardsPerView() {
-            return window.innerWidth > 992 ? 2 : 1;
+        function getMetrics() {
+            const style = window.getComputedStyle(track);
+            const gap = parseFloat(style.gap) || 0;
+            const width = originalCards[0].offsetWidth;
+            return { width, gap };
         }
 
         function updateSlider(animate = true) {
-            const cardsPerView = getCardsPerView();
-            const cardWidth = allCards[0].offsetWidth + 32; // width + gap
+            const { width, gap } = getMetrics();
+            const offset = currentIndex * (width + gap);
             
-            if (!animate) {
-                track.style.transition = 'none';
-            } else {
-                track.style.transition = 'transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)';
-            }
-            
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            track.style.transition = animate ? 'transform 0.7s cubic-bezier(0.23, 1, 0.32, 1)' : 'none';
+            track.style.transform = `translateX(-${offset}px)`;
         }
 
         function handleNext() {
-            const cardsPerView = getCardsPerView();
+            if (isMoving) return;
+            isMoving = true;
             currentIndex++;
             updateSlider(true);
 
-            // Si llegamos al final del original (al inicio de los clones)
-            if (currentIndex >= totalOriginal) {
+            if (currentIndex >= totalOriginal + 1) {
                 setTimeout(() => {
-                    currentIndex = 0;
+                    currentIndex = 1;
                     updateSlider(false);
-                }, 600); // Mismo tiempo que la transición
+                    isMoving = false;
+                }, 710);
+            } else {
+                setTimeout(() => { isMoving = false; }, 710);
             }
         }
 
         function handlePrev() {
+            if (isMoving) return;
+            isMoving = true;
+            currentIndex--;
+            updateSlider(true);
+
             if (currentIndex <= 0) {
-                currentIndex = totalOriginal - 1;
-                updateSlider(false);
                 setTimeout(() => {
-                    currentIndex--;
-                    updateSlider(true);
-                }, 10);
+                    currentIndex = totalOriginal;
+                    updateSlider(false);
+                    isMoving = false;
+                }, 710);
             } else {
-                currentIndex--;
-                updateSlider(true);
+                setTimeout(() => { isMoving = false; }, 710);
             }
         }
 
@@ -249,15 +269,39 @@ document.addEventListener('DOMContentLoaded', () => {
             resetTimer();
         });
 
-        // Auto-play (10 seconds)
-        let autoPlayTimer = setInterval(handleNext, 10000);
+        // Auto-play
+        let autoPlayTimer = setInterval(handleNext, 12000);
 
         function resetTimer() {
             clearInterval(autoPlayTimer);
-            autoPlayTimer = setInterval(handleNext, 10000);
+            autoPlayTimer = setInterval(handleNext, 12000);
+        }
+
+        // Soporte de Gestos Táctiles (Swipe)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) { // Umbral de 50px para el swipe
+                if (diff > 0) handleNext();
+                else handlePrev();
+                resetTimer();
+            }
         }
 
         window.addEventListener('resize', () => updateSlider(false));
-        updateSlider(true);
+        
+        // Inicialización segura
+        setTimeout(() => updateSlider(false), 300);
     }
 });
