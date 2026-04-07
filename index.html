@@ -22,7 +22,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Pre-carga de recursos críticos -->
+    <link rel="preload" href="./style.css" as="style">
+    <link rel="preload" href="./assets/hero-bg.webp" as="image">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -46,7 +51,9 @@
 
     <main>
         <section id="hero">
-            <div class="hero-background" fetchpriority="high"></div>
+            <div class="hero-background">
+                <img src="./assets/hero-bg.webp" alt="" fetchpriority="high" class="hero-bg-img">
+            </div>
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">Desarrollamos software a medida que <span class="highlight">hace crecer tu
@@ -449,10 +456,12 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/573045810485" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
+    <div class="whatsapp-wrapper">
+        <a href="https://wa.me/573045810485" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp">
+            <i class="ph ph-whatsapp-logo"></i>
+        </a>
+    </div>
 
     <script type="module" src="./main.js"></script>
 </body>

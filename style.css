@@ -258,12 +258,17 @@ header.scrolled {
     right: 0;
     width: 100%;
     height: 100%;
-    background: url('./assets/hero-bg.webp') no-repeat center right;
-    background-size: cover;
+    z-index: 1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
     opacity: 0.6;
     mask-image: linear-gradient(to right, transparent 0%, black 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
-    z-index: 1;
 }
 
 .hero-content {
@@ -761,25 +766,31 @@ section {
 }
 
 /* WhatsApp Floating Button */
-.whatsapp-float {
+.whatsapp-wrapper {
     position: fixed;
     bottom: 30px;
     right: 30px;
+    z-index: 1000;
+    animation: floatIn 0.8s ease-out 1s both;
+    will-change: transform, opacity;
+}
+
+.whatsapp-float {
     width: 60px;
     height: 60px;
     background-color: #25D366;
-    /* WhatsApp Green */
     color: #FFF;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-    z-index: 1000;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
-    animation: floatIn 0.8s ease-out 1s both, whatsappFloating 3s ease-in-out infinite;
+    animation: whatsappFloating 3s ease-in-out infinite;
+    position: relative;
+    will-change: transform;
 }
 
 /* Efecto de pulso (onda expansiva) */
@@ -792,6 +803,7 @@ section {
     border-radius: 50%;
     z-index: -1;
     animation: whatsappPulse 2s infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes whatsappFloating {
