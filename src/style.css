@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #00A8E8;
+  --color-brand-secondary: #0F172A; /* Azul petróleo muy profundo */
+  --color-brand-accent: #059669;
+  --color-obsidian: #05070A; /* Negro puro OLED */
+  
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+  
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@layer base {
+  body {
+    @apply antialiased text-brand-secondary bg-white selection:bg-brand-primary/20;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .glass-crystal {
+    @apply bg-white/70 backdrop-blur-3xl border border-brand-secondary/10 shadow-2xl shadow-brand-secondary/5;
+  }
+  
+  .glass-obsidian {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/20;
+  }
+
+  .mesh-dark {
+    background: 
+      radial-gradient(at 0% 0%, rgba(0, 168, 232, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(5, 150, 105, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(27, 49, 94, 0.2) 0px, transparent 80%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-cyan-400 to-brand-accent;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 168, 232, 0.3);
+  }
+}
