@@ -32,9 +32,9 @@ onUnmounted(() => {
 
         <ul class="hidden md:flex items-center gap-12">
           <li v-for="link in [
-            { label: 'Soluciones', href: '#solutions' },
-            { label: 'Procesos', href: '#process' },
-            { label: 'Casos', href: '#cases' }
+            { label: $t('nav.solutions'), href: '#solutions' },
+            { label: $t('nav.process'), href: '#process' },
+            { label: $t('nav.cases'), href: '#cases' }
           ]" :key="link.label">
             <a 
               :href="link.href" 
@@ -51,7 +51,7 @@ onUnmounted(() => {
           class="text-[0.7rem] font-black uppercase tracking-widest px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg"
           :class="[isScrolled ? 'bg-brand-secondary text-white hover:bg-brand-primary' : 'bg-white text-brand-secondary hover:shadow-white/20']"
         >
-          Diagnóstico
+          {{ $t('nav.diagnostic') }}
         </a>
       </nav>
     </div>

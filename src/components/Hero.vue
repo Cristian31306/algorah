@@ -23,24 +23,24 @@ onMounted(() => {
       >
         <div class="inline-flex items-center gap-2 px-6 py-2 rounded-full glass-obsidian mb-10 border-white/20">
           <span class="flex h-2 w-2 rounded-full bg-brand-primary shadow-[0_0_10px_#00A8E8]"></span>
-          <span class="text-[0.65rem] font-bold uppercase tracking-[0.4em] text-white/80">Ingeniería de Élite 2026</span>
+          <span class="text-[0.65rem] font-bold uppercase tracking-[0.4em] text-white/80">{{ $t('hero.badge') }}</span>
         </div>
 
         <h1 class="text-6xl md:text-8xl font-display font-black leading-[1] text-white mb-10 tracking-tight">
-          Software que <br />
-          <span class="text-gradient italic font-medium">multiplica tu éxito</span>
+          {{ $t('hero.title_1') }} <br />
+          <span class="text-gradient italic font-medium">{{ $t('hero.title_2') }}</span>
         </h1>
 
         <p class="text-xl md:text-2xl text-white/60 font-medium leading-relaxed max-w-2xl mx-auto mb-16 px-4">
-          Arquitectura robusta y diseño táctico para empresas que exigen resultados excepcionales y escalabilidad ilimitada.
+          {{ $t('hero.desc') }}
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-24">
           <a href="#contact" class="group relative px-12 py-6 bg-white text-obsidian rounded-full font-black overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.2)]">
-            <span class="relative z-10">Agendar Diagnóstico</span>
+            <span class="relative z-10">{{ $t('hero.cta_1') }}</span>
           </a>
           <a href="#cases" class="px-12 py-6 glass-obsidian rounded-full font-bold text-white hover:bg-white/10 transition-all border-white/30">
-            Ver Casos de Éxito
+            {{ $t('hero.cta_2') }}
           </a>
         </div>
 
@@ -48,17 +48,17 @@ onMounted(() => {
         <div class="flex items-center justify-center gap-16 py-8 px-12 glass-obsidian rounded-[3rem] w-fit mx-auto border-white/10">
           <div class="flex flex-col gap-1 text-center">
             <span class="text-4xl font-display font-black text-white">+100</span>
-            <span class="text-[0.65rem] uppercase tracking-widest text-brand-primary font-black">Proyectos</span>
+            <span class="text-[0.65rem] uppercase tracking-widest text-brand-primary font-black">{{ $t('hero.metrics.projects') }}</span>
           </div>
           <div class="h-12 w-px bg-white/10"></div>
           <div class="flex flex-col gap-1 text-left">
-            <span class="text-lg font-bold text-white">Escalabilidad</span>
-            <span class="text-xs text-white/40 font-medium">Métricas corporativas</span>
+            <span class="text-lg font-bold text-white">{{ $t('hero.metrics.scalability') }}</span>
+            <span class="text-xs text-white/40 font-medium">{{ $t('hero.metrics.scalability_desc') }}</span>
           </div>
           <div class="h-12 w-px bg-white/10"></div>
           <div class="flex flex-col gap-1 text-left">
-            <span class="text-lg font-bold text-white">Soporte 24/7</span>
-            <span class="text-xs text-white/40 font-medium">Respuesta táctica</span>
+            <span class="text-lg font-bold text-white">{{ $t('hero.metrics.support') }}</span>
+            <span class="text-xs text-white/40 font-medium">{{ $t('hero.metrics.support_desc') }}</span>
           </div>
         </div>
       </div>

@@ -1,34 +1,22 @@
 <script setup>
 const cases = [
   {
-    title: 'Sistema de Parqueaderos',
     result: '+60%',
-    metric: 'Eficiencia Operativa',
-    desc: 'Automatización total de ingresos y pagos con reportes en tiempo real para grandes superficies.',
     size: 'col-span-12 md:col-span-8',
     icon: 'ph-car'
   },
   {
-    title: 'E-commerce Musical',
     result: '0.8s',
-    metric: 'Carga Ultra-rápida',
-    desc: 'Optimización extrema para alta conversión en catálogos masivos de instrumentos.',
     size: 'col-span-12 md:col-span-4',
     icon: 'ph-music-notes'
   },
   {
-    title: 'Smart Finance',
     result: '+50%',
-    metric: 'Retención de Usuarios',
-    desc: 'Interfaz minimalista con categorización automática de gastos e ingresos.',
     size: 'col-span-12 md:col-span-4',
     icon: 'ph-bank'
   },
   {
-    title: 'Retail Calzado',
     result: '+40%',
-    metric: 'Ventas Cruzadas',
-    desc: 'Omnicanalidad total con sincronización en tiempo real entre tiendas físicas y nube.',
     size: 'col-span-12 md:col-span-8',
     icon: 'ph-sneaker'
   }
@@ -39,10 +27,10 @@ const cases = [
   <section id="cases" class="py-40 bg-white relative">
     <div class="container mx-auto px-6">
       <div class="text-center mb-24 max-w-3xl mx-auto">
-        <span class="text-brand-primary font-bold uppercase tracking-[0.4em] text-[0.7rem] mb-6 block">Resultados Verificables</span>
-        <h2 class="text-5xl md:text-7xl font-display font-black text-brand-secondary mb-8 leading-tight italic">Impacto Real</h2>
+        <span class="text-brand-primary font-bold uppercase tracking-[0.4em] text-[0.7rem] mb-6 block">{{ $t('cases.badge') }}</span>
+        <h2 class="text-5xl md:text-7xl font-display font-black text-brand-secondary mb-8 leading-tight italic">{{ $t('cases.title') }}</h2>
         <p class="text-xl text-brand-secondary/70 font-medium leading-relaxed">
-          Casos de estudio donde nuestra ingeniería transformó la métrica crítica de negocio.
+          {{ $t('cases.desc') }}
         </p>
       </div>
 
@@ -57,16 +45,16 @@ const cases = [
               <div class="h-16 w-16 bg-brand-secondary text-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <i :class="['ph text-3xl', c.icon]"></i>
               </div>
-              <h3 class="text-2xl font-display font-bold text-brand-secondary leading-tight">{{ c.title }}</h3>
+              <h3 class="text-2xl font-display font-bold text-brand-secondary leading-tight">{{ $t('cases.items.' + index + '.title') }}</h3>
             </div>
             <div class="flex flex-col items-start xl:items-end">
               <span class="text-5xl font-display font-black text-brand-primary text-glow">{{ c.result }}</span>
-              <span class="text-[0.65rem] font-black uppercase tracking-[0.2em] text-brand-secondary/40">{{ c.metric }}</span>
+              <span class="text-[0.65rem] font-black uppercase tracking-[0.2em] text-brand-secondary/40">{{ $t('cases.items.' + index + '.metric') }}</span>
             </div>
           </div>
           
           <p class="text-brand-secondary/80 text-lg font-medium leading-relaxed max-w-[95%]">
-            {{ c.desc }}
+            {{ $t('cases.items.' + index + '.desc') }}
           </p>
           
           <div class="absolute bottom-10 right-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500">
@@ -77,7 +65,7 @@ const cases = [
       
       <div class="mt-24 text-center">
         <a href="#contact" class="inline-flex items-center gap-6 px-12 py-6 bg-brand-secondary text-white rounded-full font-black text-sm uppercase tracking-widest hover:bg-brand-primary hover:scale-105 transition-all shadow-xl shadow-brand-secondary/20">
-          Explorar Portafolio Completo
+          {{ $t('cases.explore') }}
           <i class="ph ph-arrow-right-bold"></i>
         </a>
       </div>

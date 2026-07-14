@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "solutions": "Soluciones",
+    "process": "Procesos",
+    "cases": "Casos",
+    "diagnostic": "Diagnóstico"
+  },
+  "hero": {
+    "badge": "Ingeniería de Élite 2026",
+    "title_1": "Software que",
+    "title_2": "multiplica tu éxito",
+    "desc": "Arquitectura robusta y diseño táctico para empresas que exigen resultados excepcionales y escalabilidad ilimitada.",
+    "cta_1": "Agendar Diagnóstico",
+    "cta_2": "Ver Casos de Éxito",
+    "metrics": {
+      "projects": "Proyectos",
+      "scalability": "Escalabilidad",
+      "scalability_desc": "Métricas corporativas",
+      "support": "Soporte 24/7",
+      "support_desc": "Respuesta táctica"
+    }
+  },
+  "solutions": {
+    "badge": "Nuestro Arsenal Táctico",
+    "title": "Ingeniería para el Futuro",
+    "desc": "No somos una agencia más. Somos arquitectos de soluciones que impactan directamente en tu rentabilidad.",
+    "explore": "Explorar Solución",
+    "items": [
+      {
+        "title": "Software a Medida",
+        "desc": "ERPs y CRMs personalizados que transforman el caos operativo en una maquinaria de precisión absoluta."
+      },
+      {
+        "title": "Aplicaciones Web",
+        "desc": "Plataformas robustas y optimizadas para gestionar millones de peticiones sin pestañear."
+      },
+      {
+        "title": "Automatización Inteligente",
+        "desc": "Eliminamos el error humano mediante flujos de trabajo autónomos que escalan tu tiempo."
+      },
+      {
+        "title": "E-commerce Luxury",
+        "desc": "Experiencias de compra premium diseñadas para marcas que no aceptan menos que la perfección."
+      }
+    ]
+  },
+  "process": {
+    "badge": "Metodología de Élite",
+    "title": "La Forja",
+    "desc": "Nuestro proceso es una mezcla de artesanía digital y precisión de ingeniería. Cada fase elimina la incertidumbre técnica.",
+    "guarantee_title": "Garantía Táctica",
+    "guarantee_desc": "Si en la primera fase no aportamos valor estratégico real, no continuamos. Compromiso total con tu ROI.",
+    "items": [
+      {
+        "title": "Plano",
+        "desc": "Análisis profundo y arquitectura de requerimientos. No picamos código sin un mapa claro del éxito."
+      },
+      {
+        "title": "Catálisis",
+        "desc": "Diseño de interfaz y experiencia de usuario de altísima fidelidad. El software debe ser hermoso para ser potente."
+      },
+      {
+        "title": "Ensamblaje",
+        "desc": "Ingeniería de software pura con estándares corporativos y pruebas de estrés constantes."
+      },
+      {
+        "title": "Entrega",
+        "desc": "Despliegue estratégico y evolución continua. Tu éxito es nuestra métrica principal."
+      }
+    ]
+  },
+  "cases": {
+    "badge": "Resultados Verificables",
+    "title": "Impacto Real",
+    "desc": "Casos de estudio donde nuestra ingeniería transformó la métrica crítica de negocio.",
+    "explore": "Explorar Portafolio Completo",
+    "items": [
+      {
+        "title": "Sistema de Parqueaderos",
+        "metric": "Eficiencia Operativa",
+        "desc": "Automatización total de ingresos y pagos con reportes en tiempo real para grandes superficies."
+      },
+      {
+        "title": "E-commerce Musical",
+        "metric": "Carga Ultra-rápida",
+        "desc": "Optimización extrema para alta conversión en catálogos masivos de instrumentos."
+      },
+      {
+        "title": "Smart Finance",
+        "metric": "Retención de Usuarios",
+        "desc": "Interfaz minimalista con categorización automática de gastos e ingresos."
+      },
+      {
+        "title": "Retail Calzado",
+        "metric": "Ventas Cruzadas",
+        "desc": "Omnicanalidad total con sincronización en tiempo real entre tiendas físicas y nube."
+      }
+    ]
+  },
+  "footer": {
+    "contact_badge": "Contacto Directo",
+    "contact_title": "¿Listos para forjar <br/> tu próxima ventaja competitiva?",
+    "contact_whatsapp": "Hablemos por WhatsApp",
+    "contact_response": "Respuesta promedio: 15 minutos",
+    "subtitle": "Arquitectos de Software para el Futuro Digital",
+    "rights": "© 2026 ALGORA SOLUTIONS. TODOS LOS DERECHOS RESERVADOS."
+  }
+}

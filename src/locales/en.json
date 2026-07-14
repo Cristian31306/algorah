@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "process": "Process",
+    "cases": "Cases",
+    "diagnostic": "Diagnostic"
+  },
+  "hero": {
+    "badge": "Elite Engineering 2026",
+    "title_1": "Software that",
+    "title_2": "multiplies your success",
+    "desc": "Robust architecture and tactical design for companies demanding exceptional results and unlimited scalability.",
+    "cta_1": "Schedule Diagnostic",
+    "cta_2": "View Case Studies",
+    "metrics": {
+      "projects": "Projects",
+      "scalability": "Scalability",
+      "scalability_desc": "Enterprise metrics",
+      "support": "24/7 Support",
+      "support_desc": "Tactical response"
+    }
+  },
+  "solutions": {
+    "badge": "Our Tactical Arsenal",
+    "title": "Engineering for the Future",
+    "desc": "We are not just another agency. We are solution architects that directly impact your profitability.",
+    "explore": "Explore Solution",
+    "items": [
+      {
+        "title": "Custom Software",
+        "desc": "Tailor-made ERPs and CRMs that transform operational chaos into an absolute precision machine."
+      },
+      {
+        "title": "Web Applications",
+        "desc": "Robust and optimized platforms built to handle millions of requests without blinking."
+      },
+      {
+        "title": "Smart Automation",
+        "desc": "We eliminate human error through autonomous workflows that scale your time."
+      },
+      {
+        "title": "Luxury E-commerce",
+        "desc": "Premium shopping experiences designed for brands that accept nothing less than perfection."
+      }
+    ]
+  },
+  "process": {
+    "badge": "Elite Methodology",
+    "title": "The Forge",
+    "desc": "Our process is a blend of digital craftsmanship and engineering precision. Every phase removes technical uncertainty.",
+    "guarantee_title": "Tactical Guarantee",
+    "guarantee_desc": "If we don't provide real strategic value in the first phase, we stop. Total commitment to your ROI.",
+    "items": [
+      {
+        "title": "Blueprint",
+        "desc": "Deep analysis and requirements architecture. We don't write code without a clear map to success."
+      },
+      {
+        "title": "Catalysis",
+        "desc": "Ultra-high fidelity user interface and experience design. Software must be beautiful to be powerful."
+      },
+      {
+        "title": "Assembly",
+        "desc": "Pure software engineering with corporate standards and constant stress testing."
+      },
+      {
+        "title": "Delivery",
+        "desc": "Strategic deployment and continuous evolution. Your success is our primary metric."
+      }
+    ]
+  },
+  "cases": {
+    "badge": "Verifiable Results",
+    "title": "Real Impact",
+    "desc": "Case studies where our engineering transformed critical business metrics.",
+    "explore": "Explore Full Portfolio",
+    "items": [
+      {
+        "title": "Parking System",
+        "metric": "Operational Efficiency",
+        "desc": "Total automation of entries and payments with real-time reports for large facilities."
+      },
+      {
+        "title": "Music E-commerce",
+        "metric": "Ultra-fast Loading",
+        "desc": "Extreme optimization for high conversion in massive instrument catalogs."
+      },
+      {
+        "title": "Smart Finance",
+        "metric": "User Retention",
+        "desc": "Minimalist interface with automatic categorization of expenses and income."
+      },
+      {
+        "title": "Footwear Retail",
+        "metric": "Cross-selling",
+        "desc": "Total omnichannel approach with real-time synchronization between physical stores and the cloud."
+      }
+    ]
+  },
+  "footer": {
+    "contact_badge": "Direct Contact",
+    "contact_title": "Ready to forge <br/> your next competitive advantage?",
+    "contact_whatsapp": "Let's talk on WhatsApp",
+    "contact_response": "Average response time: 15 minutes",
+    "subtitle": "Software Architects for the Digital Future",
+    "rights": "© 2026 ALGORA SOLUTIONS. ALL RIGHTS RESERVED."
+  }
+}
