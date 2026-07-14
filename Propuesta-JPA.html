@@ -282,11 +282,23 @@
     </main>
 
     <script>
-      fetch('/api/notify-visit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ page: 'Propuesta EDUCORE' })
-      }).catch(e => console.error(e));
+      async function trackVisit() {
+        let loc = 'Desconocida';
+        let ipInfo = 'Oculta';
+        try {
+          const res = await fetch('https://get.geojs.io/v1/ip/geo.json');
+          const geo = await res.json();
+          loc = `${geo.city || 'Ciudad Desconocida'}, ${geo.country || ''}`;
+          ipInfo = geo.ip || 'Oculta';
+        } catch (e) {}
+
+        fetch('/api/notify-visit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ page: 'Propuesta EDUCORE', location: loc, ip: ipInfo })
+        }).catch(e => console.error(e));
+      }
+      trackVisit();
     </script>
 </body>
 </html>

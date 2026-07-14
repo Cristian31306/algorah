@@ -62,7 +62,7 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 app.post('/api/notify-visit', async (req, res) => {
-    const { page } = req.body;
+    const { page, location, ip } = req.body;
     
     if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
         return res.status(500).json({ success: false, message: 'Telegram credentials missing' });
@@ -70,7 +70,7 @@ app.post('/api/notify-visit', async (req, res) => {
 
     // Agregar la fecha y hora de Colombia
     const date = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' });
-    const message = `👀 <b>¡Nueva Visita!</b>\nAlguien acaba de entrar a: <b>${page}</b>\n🕒 <i>${date}</i>`;
+    const message = `👀 <b>¡Nueva Visita!</b>\nAlguien acaba de entrar a: <b>${page}</b>\n📍 <b>Ubicación:</b> ${location || 'Desconocida'}\n💻 <b>IP:</b> ${ip || 'Oculta'}\n🕒 <i>${date}</i>`;
     const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
 
     try {
