@@ -6,7 +6,7 @@
     "diagnostic": "Diagnóstico"
   },
   "hero": {
-    "badge": "Ingeniería de Élite 2026",
+    "badge": "Ingeniería de Élite {year}",
     "title_1": "Software que",
     "title_2": "multiplica tu éxito",
     "desc": "Arquitectura robusta y diseño táctico para empresas que exigen resultados excepcionales y escalabilidad ilimitada.",
@@ -103,6 +103,6 @@
     "contact_whatsapp": "Hablemos por WhatsApp",
     "contact_response": "Respuesta promedio: 15 minutos",
     "subtitle": "Arquitectos de Software para el Futuro Digital",
-    "rights": "© 2026 ALGORA SOLUTIONS. TODOS LOS DERECHOS RESERVADOS."
+    "rights": "© {year} ALGORA SOLUTIONS. TODOS LOS DERECHOS RESERVADOS."
   }
 }

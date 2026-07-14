@@ -6,7 +6,7 @@
     "diagnostic": "Diagnostic"
   },
   "hero": {
-    "badge": "Elite Engineering 2026",
+    "badge": "Elite Engineering {year}",
     "title_1": "Software that",
     "title_2": "multiplies your success",
     "desc": "Robust architecture and tactical design for companies demanding exceptional results and unlimited scalability.",
@@ -103,6 +103,6 @@
     "contact_whatsapp": "Let's talk on WhatsApp",
     "contact_response": "Average response time: 15 minutes",
     "subtitle": "Software Architects for the Digital Future",
-    "rights": "© 2026 ALGORA SOLUTIONS. ALL RIGHTS RESERVED."
+    "rights": "© {year} ALGORA SOLUTIONS. ALL RIGHTS RESERVED."
   }
 }

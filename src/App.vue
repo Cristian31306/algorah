@@ -54,7 +54,7 @@ onMounted(() => {
           <a href="#" class="text-xs font-bold text-brand-secondary/30 hover:text-brand-primary uppercase tracking-widest">GitHub</a>
           <a href="#" class="text-xs font-bold text-brand-secondary/30 hover:text-brand-primary uppercase tracking-widest">Behance</a>
         </div>
-        <p class="text-[0.65rem] text-brand-secondary/20 font-bold tracking-widest uppercase">{{ $t('footer.rights') }}</p>
+        <p class="text-[0.65rem] text-brand-secondary/20 font-bold tracking-widest uppercase">{{ $t('footer.rights', { year: new Date().getFullYear() }) }}</p>
       </div>
     </footer>
   </div>

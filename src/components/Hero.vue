@@ -23,7 +23,7 @@ onMounted(() => {
       >
         <div class="inline-flex items-center gap-2 px-6 py-2 rounded-full glass-obsidian mb-10 border-white/20">
           <span class="flex h-2 w-2 rounded-full bg-brand-primary shadow-[0_0_10px_#00A8E8]"></span>
-          <span class="text-[0.65rem] font-bold uppercase tracking-[0.4em] text-white/80">{{ $t('hero.badge') }}</span>
+          <span class="text-[0.65rem] font-bold uppercase tracking-[0.4em] text-white/80">{{ $t('hero.badge', { year: new Date().getFullYear() }) }}</span>
         </div>
 
         <h1 class="text-6xl md:text-8xl font-display font-black leading-[1] text-white mb-10 tracking-tight">
