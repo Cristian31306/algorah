@@ -281,5 +281,12 @@
         </div>
     </main>
 
+    <script>
+      fetch('/api/notify-visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ page: 'Propuesta EDUCORE' })
+      }).catch(e => console.error(e));
+    </script>
 </body>
 </html>

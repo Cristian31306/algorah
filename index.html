@@ -17,5 +17,12 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      fetch('/api/notify-visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ page: 'Algorah Landing Page' })
+      }).catch(e => console.error(e));
+    </script>
   </body>
 </html>

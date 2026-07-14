@@ -277,23 +277,16 @@
                     <h3 class="text-lg font-bold text-slate-800 mb-2">Validez de la Propuesta</h3>
                     <p class="text-sm text-slate-600">Los costos y alcances estipulados en esta propuesta técnica y comercial tienen una validez de <strong>30 días calendario</strong> a partir de su fecha de emisión.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-12 mt-12 pt-8 border-t border-slate-200">
-                    <div>
-                        <div class="h-px bg-slate-400 w-full mb-3 mt-12"></div>
-                        <p class="font-bold text-slate-800">Cristian Alexander Durán Medina</p>
-                        <p class="text-sm text-slate-500">Desarrollador de Software - Algorah</p>
-                    </div>
-                    <div>
-                        <div class="h-px bg-slate-400 w-full mb-3 mt-12"></div>
-                        <p class="font-bold text-slate-800">Representante EDUCORE</p>
-                        <p class="text-sm text-slate-500">Firma de Aceptación y Aprobación</p>
-                        <p class="text-xs text-slate-400 mt-1">Fecha: _____ / _____ / 2026</p>
-                    </div>
-                </div>
             </section>
         </div>
     </main>
 
+    <script>
+      fetch('/api/notify-visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ page: 'Propuesta EDUCORE' })
+      }).catch(e => console.error(e));
+    </script>
 </body>
 </html>

@@ -61,6 +61,41 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
+app.post('/api/notify-visit', async (req, res) => {
+    const { page } = req.body;
+    
+    if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
+        return res.status(500).json({ success: false, message: 'Telegram credentials missing' });
+    }
+
+    // Agregar la fecha y hora de Colombia
+    const date = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' });
+    const message = `👀 <b>¡Nueva Visita!</b>\nAlguien acaba de entrar a: <b>${page}</b>\n🕒 <i>${date}</i>`;
+    const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
+
+    try {
+        const response = await fetch(telegramUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: process.env.TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        });
+
+        if (response.ok) {
+            res.status(200).json({ success: true });
+        } else {
+            console.error('❌ Error desde Telegram:', await response.text());
+            res.status(500).json({ success: false, message: 'Error enviando a Telegram' });
+        }
+    } catch (error) {
+        console.error('❌ Error enviando a Telegram:', error.message);
+        res.status(500).json({ success: false, message: 'Error de servidor' });
+    }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor de correo Algorah corriendo en http://localhost:${PORT}`);
