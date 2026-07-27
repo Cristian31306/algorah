@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Comercial - Plataforma B2B Transaccional & Clearinghouse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .avoid-break {
+                page-break-inside: avoid;
+            }
+            .shadow-lg {
+                box-shadow: none !important;
+            }
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased py-10 print:py-0">
+
+    <!-- Botones flotantes -->
+    <div class="fixed bottom-8 right-8 no-print z-50 flex flex-col gap-3 items-end">
+        <a href="https://algorah.bond/" target="_blank" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-full shadow-xl transition transform hover:scale-105 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            Visitar sitio web
+        </a>
+        <button onclick="window.print()" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full shadow-xl transition transform hover:scale-105 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            Guardar como PDF
+        </button>
+    </div>
+
+    <main class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden print:shadow-none print:rounded-none">
+        
+        <!-- Header Image -->
+        <div class="h-48 w-full bg-slate-800 relative">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Ecosistema B2B Transaccional" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 flex flex-col justify-center px-12">
+                <h2 class="text-teal-400 font-semibold tracking-wider uppercase text-sm mb-2">Propuesta Técnica y Comercial</h2>
+                <h1 class="text-3xl font-bold text-white">Ecosistema B2B Transaccional & Clearinghouse</h1>
+                <p class="text-lg text-slate-300 mt-1">Marketplace, App de Operaciones en Campo y Motor Financiero</p>
+            </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="px-12 py-8 bg-teal-50 border-b border-teal-100 flex justify-between items-start">
+            <div>
+                <p class="text-sm text-teal-800 font-semibold uppercase tracking-wider mb-1">Preparado por</p>
+                <p class="text-lg font-bold text-slate-800">Cristian Alexander Durán Medina</p>
+                <p class="text-slate-600">Algorah</p>
+                <div class="mt-2 text-sm text-slate-600 flex flex-col gap-1">
+                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> ceo.algorah@gmail.com</span>
+                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> +57 304 581 0485</span>
+                    <a href="https://algorah.bond/" target="_blank" class="flex items-center gap-2 text-teal-600 hover:text-teal-800 transition font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> algorah.bond</a>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-sm text-teal-800 font-semibold uppercase tracking-wider mb-1">Para</p>
+                <p class="text-lg font-bold text-slate-800">Nicolás Ávila</p>
+                <p class="text-slate-600">Proyecto Confidencial (B2B)</p>
+                <p class="text-sm text-slate-500 mt-2">27 de Julio de 2026</p>
+            </div>
+        </div>
+
+        <div class="px-12 py-10 space-y-10">
+
+            <!-- Section 1 -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">1. Objetivo del Proyecto</h3>
+                </div>
+                <p class="leading-relaxed mb-3">La presente propuesta formaliza el diseño, desarrollo e implementación del ecosistema integral para un <strong>Marketplace B2B y Cámara de Compensación (Clearinghouse)</strong>. La plataforma conectará a proveedores de capacidad ociosa de activos físicos con clientes corporativos bajo un modelo de demanda por tiempo determinado.</p>
+                <p class="leading-relaxed mb-3">El desarrollo contempla la construcción desde cero del diseño UX/UI, la web de gestión transaccional, la aplicación móvil operaria con arquitectura <em>Offline-First</em>, y la integración de motores de compliance, facturación electrónica DIAN a 3 bandas, firma digital e intermediación financiera automatizada.</p>
+                <p class="leading-relaxed mb-3">El diseño UX/UI de ambas plataformas (web y móvil) se realiza <strong>desde cero</strong> como parte del alcance, partiendo de la identidad visual que la empresa entregará (paleta de colores y logotipo) hasta la maquetación funcional de cada pantalla del sistema.</p>
+                <p class="leading-relaxed">Dado que el modelo de negocio requiere el ciclo completo (onboarding, matching, operación física y cobranza) para operar de forma consistente, el desarrollo se plantea como <strong>un único despliegue integral a producción</strong>, sin fases de MVP intermedias, tal como fue definido con la empresa.</p>
+            </section>
+
+            <!-- Section 2 -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">2. Alcance del Desarrollo & Módulos Core</h3>
+                </div>
+                <p class="leading-relaxed mb-4">Se desarrollará el paquete completo del sistema bajo una arquitectura integral, cubriendo los siguientes componentes:</p>
+                
+                <div class="space-y-4">
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">A. Onboarding B2B & Motor de Compliance (KYC)</h4>
+                        <p class="text-sm text-slate-600 mt-1">Validación algorítmica de NIT y consumo asíncrono de APIs (Truora/TusDatos) para antecedentes corporativos, representación legal y cruce en listas AML/CFT. Enrutamiento de homónimos a panel manual de auditoría con logs en PDF.</p>
+                    </div>
+
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">B. Motor de Inventarios, Calendario ACID y Matching Geoespacial</h4>
+                        <p class="text-sm text-slate-600 mt-1">Modelado jerárquico (Activo Matriz vs. Sub-unidades). Ledger de series de tiempo con <strong>Optimistic Locking</strong> en base de datos para prevención absoluta de sobreventas <strong>(Double-Booking).</strong> Búsquedas geoespaciales con consultas PostGIS (<code>ST_DWithin</code>) y bloqueo temporal de tarifa (<strong>Soft-Locks</strong> de 15 min).</p>
+                    </div>
+
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">C. App Móvil de Operaciones en Campo (Offline-First)</h4>
+                        <p class="text-sm text-slate-600 mt-1">Aplicación nativa/multiplataforma con almacenamiento local (SQLite/Hive) y cola de sincronización en segundo plano. Generación y escaneo de tokens QR dinámicos (rotación de 30s), validación de sub-unidades y captura de evidencia fotográfica con metadatos EXIF inalterables (GPS UTC).</p>
+                    </div>
+
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">D. Motor de Clearinghouse, Legal & Facturación DIAN</h4>
+                        <p class="text-sm text-slate-600 mt-1">Generación de contratos PDF aplanados con firma electrónica OTP (Ley 527/99) y pauta de auditoría con hash SHA-256. Facturación electrónica DIAN a 3 bandas (Proveedor &rarr; Plataforma &rarr; Cliente), pasarela de pagos con tokenización PCI-DSS y automatización de dispersión de fondos (<em>Split Payments Net-30</em>).</p>
+                    </div>
+
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">E. Motor de Cobranza Coactiva & Candado Digital</h4>
+                        <p class="text-sm text-slate-600 mt-1">Alertas multicanal (WhatsApp, SMS, Email). Bloqueo automático de interfaz y alteración de QR de acceso físico en Día 1 de mora (<em>Hard Lockout</em> para retención legal del activo).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">3. Arquitectura Tecnológica Propuesta</h3>
+                </div>
+                <p class="leading-relaxed mb-4">Garantizamos una arquitectura escalable, desacoplada y orientada a alta disponibilidad transaccional:</p>
+                <p class="leading-relaxed mb-4 text-sm text-slate-600 bg-amber-50 border border-amber-100 rounded-lg p-4"><strong class="text-slate-800">Nota sobre el stack:</strong> el RFP sugiere alternativas No-Code/Low-Code (ej. Bubble) para la capa web. Recomendamos en su lugar un desarrollo a medida (Vue 3 + Laravel/Node.js) porque la naturaleza financiera del sistema (Ledger ACID, Split de Pagos, Cobranza Coactiva) exige control total sobre las transacciones y la seguridad de datos, algo que las plataformas No-Code limitan por sus restricciones de escalabilidad y "vendor lock-in". Esta decisión no compromete los tiempos de entrega planteados en el cronograma.</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h4 class="font-bold text-teal-700 flex items-center gap-2 mb-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Web App (Clientes / Proveedores / Admin)</h4>
+                        <p class="text-sm text-slate-600">Single Page Application (SPA) en Vue 3 + Inertia.js + Tailwind CSS, garantizando velocidad de carga inmediata e interfaces intuitivas.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h4 class="font-bold text-teal-700 flex items-center gap-2 mb-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg> App Móvil Operaria</h4>
+                        <p class="text-sm text-slate-600">Desarrollo en Flutter / FlutterFlow con motor local SQLite/Hive para persistencia offline y sincronización con el servidor central.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h4 class="font-bold text-teal-700 flex items-center gap-2 mb-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg> Backend Core & Base de Datos</h4>
+                        <p class="text-sm text-slate-600">API RESTful Headless en Laravel / Node.js respaldado por <strong>PostgreSQL + PostGIS</strong>. Cumplimiento ACID estricto, soft deletes e historial UTC.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h4 class="font-bold text-teal-700 flex items-center gap-2 mb-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> Infraestructura WORM & Seguridad</h4>
+                        <p class="text-sm text-slate-600">Almacenamiento de contratos en AWS S3 con políticas WORM (Write Once, Read Many) e integración segura vía Secret Manager y HMAC.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">4. Inversión y Plan de Pagos por Hitos</h3>
+                </div>
+                <p class="leading-relaxed mb-4">El valor total del desarrollo completo del ecosistema es de <strong class="text-xl text-teal-700">$22.000.000 COP</strong>.</p>
+                <p class="leading-relaxed mb-4">Para garantizar la transparencia y mitigar riesgos, los pagos están vinculados directamente a entregables funcionales estructurados en 4 fases:</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="py-3 px-4 font-semibold text-sm w-1/5">Fase</th>
+                                <th class="py-3 px-4 font-semibold text-sm">Hito de Entrega / Funcionalidad</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-center">Tiempo</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-center">Porcentaje</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-right">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">1. Inicial & KYC</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Firma del acuerdo, diseño UX/UI completo (Figma), arquitectura DB y Motor de Compliance KYC/NIT.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap">
+                                    <span class="block text-sm font-bold text-slate-700">3 Semanas</span>
+                                    <span class="block text-xs text-slate-500">(Semanas 1 a 3)</span>
+                                </td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">25%</td>
+                                <td class="py-4 px-4 text-right font-bold text-teal-600 whitespace-nowrap">$5.500.000 COP</td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">2. Core & Matching</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Motor de Inventarios, Ledger de Disponibilidad ACID, Búsqueda Geoespacial PostGIS y Cotizador Dinámico.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap">
+                                    <span class="block text-sm font-bold text-slate-700">4 Semanas</span>
+                                    <span class="block text-xs text-slate-500">(Semanas 4 a 7)</span>
+                                </td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">25%</td>
+                                <td class="py-4 px-4 text-right font-bold text-teal-600 whitespace-nowrap">$5.500.000 COP</td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">3. App Campo & Legal</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">App Móvil Offline-First (QR dinámico + EXIF GPS) y Motor de Firma Electrónica OTP con auditoría Ley 527.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap">
+                                    <span class="block text-sm font-bold text-slate-700">4 Semanas</span>
+                                    <span class="block text-xs text-slate-500">(Semanas 8 a 11)</span>
+                                </td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">25%</td>
+                                <td class="py-4 px-4 text-right font-bold text-teal-600 whitespace-nowrap">$5.500.000 COP</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">4. Fintech & Salida</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Facturación DIAN a 3 bandas, Pasarela con Split Payments, Candado Digital de Mora, Testing QA y Despliegue.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap">
+                                    <span class="block text-sm font-bold text-slate-700">3 Semanas</span>
+                                    <span class="block text-xs text-slate-500">(Semanas 12 a 14)</span>
+                                </td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">25%</td>
+                                <td class="py-4 px-4 text-right font-bold text-teal-600 whitespace-nowrap">$5.500.000 COP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 5: QA -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">5. Metodología de Testing y QA</h3>
+                </div>
+                <p class="leading-relaxed mb-4">Dado el carácter financiero y transaccional de la plataforma, el aseguramiento de calidad no se plantea como una fase final, sino como una práctica continua a lo largo de cada Sprint:</p>
+                <div class="space-y-4">
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">A. Pruebas Unitarias e Integración (Cálculos Transaccionales)</h4>
+                        <p class="text-sm text-slate-600 mt-1">Cobertura automatizada sobre el motor de cotización (tipos DECIMAL), el Split de Pagos Net-30, retenciones fiscales y la facturación DIAN a 3 bandas, verificando que cada operación cuadre en centavos antes de pasar a producción.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">B. Pruebas de Concurrencia (Anti Double-Booking)</h4>
+                        <p class="text-sm text-slate-600 mt-1">Simulación de reservas simultáneas sobre la misma sub-unidad de inventario para validar que el Optimistic Locking del Ledger bloquea correctamente las sobreventas en el milisegundo exacto de la transacción.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">C. Pruebas de Red y Edge-Cases (App Offline-First)</h4>
+                        <p class="text-sm text-slate-600 mt-1">Escenarios controlados de pérdida total de conectividad, cortes intermitentes y reconexión tardía para validar la cola de sincronización con Exponential Backoff y la correcta resolución de conflictos al reconectar.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">D. Pruebas de Seguridad y Auditoría</h4>
+                        <p class="text-sm text-slate-600 mt-1">Validación de firmas HMAC en webhooks entrantes, tokenización PCI-DSS de medios de pago, e integridad del hash SHA-256 y metadatos de auditoría en los contratos generados.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800">E. Ambiente de Staging y Aceptación por Hito</h4>
+                        <p class="text-sm text-slate-600 mt-1">Cada entregable de la tabla de la Sección 4 se valida en un ambiente de pruebas (Staging) con datos ficticios y checklist de aceptación firmado, antes de liberar el hito correspondiente a producción y facturación.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">6. Integraciones y Servicios Externos <span class="text-sm font-normal text-slate-500">(No incluidos)</span></h3>
+                </div>
+                <p class="leading-relaxed mb-4">Para la operación del sistema se integrarán proveedores especializados de nivel empresarial. Las siguientes son nuestras <strong>recomendaciones</strong>, seleccionadas por su relación costo-beneficio y facilidad de integración; la elección final de cada proveedor se validará junto con la empresa antes de iniciar el desarrollo. Los costos de consumo de estas APIs y la infraestructura en la nube son responsabilidad directa de la empresa titular:</p>
+                <ul class="grid md:grid-cols-2 gap-4">
+                    <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg flex gap-3 items-start">
+                        <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 001-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                        <div>
+                            <strong class="block text-slate-800">Servidores & Storage WORM</strong>
+                            <span class="text-sm text-slate-600">Servidores de alto rendimiento (Hetzner Cloud / DigitalOcean) con base de datos administrada. Documentos legales en <strong>AWS S3 (WORM)</strong>. Capa de seguridad Cloudflare (WAF/DDoS). (Aprox. $35 - $65 USD/mes).</span>
+                        </div>
+                    </li>
+                    <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg flex gap-3 items-start">
+                        <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div>
+                            <strong class="block text-slate-800">APIs de Compliance & KYC</strong>
+                            <span class="text-sm text-slate-600">Truora / TusDatos para antecedentes y listas restrictivas AML (Cobro por consulta realizada).</span>
+                        </div>
+                    </li>
+                    <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg flex gap-3 items-start">
+                        <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        <div>
+                            <strong class="block text-slate-800">Proveedor Facturación DIAN</strong>
+                            <span class="text-sm text-slate-600">FacturaTech / Facturante / Siigo para emisión de comprobantes electrónicos a 3 bandas.</span>
+                        </div>
+                    </li>
+                    <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg flex gap-3 items-start">
+                        <svg class="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        <div>
+                            <strong class="block text-slate-800">Pasarela & Envíos OTP</strong>
+                            <span class="text-sm text-slate-600">Comisión por transacción en pasarela (Wompi/Bold) + Saldo SMS/WhatsApp (Twilio/Hablah) para OTPs de firma.</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section 7 -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">7. Acuerdos y Garantía del Proyecto</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-bold">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Propiedad Intelectual y Código Fuente</h4>
+                            <p class="text-sm text-slate-600">Al finalizar el pago del 100% del proyecto, la titularidad completa de los repositorios de código, bases de datos y manuales de arquitectura se transferirá de manera exclusiva a su empresa.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-bold">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Garantía Técnica</h4>
+                            <p class="text-sm text-slate-600 text-justify">El desarrollo incluye <strong>120 días calendario de garantía técnica gratuita</strong> tras la salida a producción. Cubre la corrección de errores de código, fallos de concurrencia o desajustes respecto al alcance especificado en esta propuesta.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-bold">3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Soporte y Mantenimiento Post-Garantía</h4>
+                            <p class="text-sm text-slate-600 text-justify">Opción de contratar un plan de soporte preventivo y monitoreo técnico continuo por un valor de <strong>$500.000 COP / mes</strong>, asegurando disponibilidad 24/7 y mantenimiento de servidor.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Validez -->
+            <section class="bg-slate-50 border border-slate-200 rounded-lg p-8 mt-12 avoid-break">
+                <div class="mb-4">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Validez de la Propuesta</h3>
+                    <p class="text-sm text-slate-600">Los costos y condiciones estipulados en esta propuesta técnica y comercial tienen una validez de <strong>30 días calendario</strong> a partir de la fecha de emisión.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+
+    <script>
+      async function trackVisit() {
+        let loc = 'Desconocida';
+        let ipInfo = 'Oculta';
+        try {
+          const res = await fetch('https://get.geojs.io/v1/ip/geo.json');
+          const geo = await res.json();
+          loc = `${geo.city || 'Ciudad Desconocida'}, ${geo.country || ''}`;
+          ipInfo = geo.ip || 'Oculta';
+        } catch (e) {}
+
+        fetch('/api/notify-visit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ page: 'Propuesta Clearinghouse B2B', location: loc, ip: ipInfo })
+        }).catch(e => console.error(e));
+      }
+      trackVisit();
+    </script>
+    
+</html>
