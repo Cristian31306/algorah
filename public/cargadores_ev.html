@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Comercial - Sistema de Gestión y Pagos QR para Cargadores EV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+
+        @media print {
+            body { background-color: white; }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            .avoid-break { page-break-inside: avoid; }
+            .shadow-lg { box-shadow: none !important; }
+            .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+    </style>
+</head>
+<body class="antialiased py-10 print:py-0">
+
+    <!-- Botones flotantes -->
+    <div class="fixed bottom-8 right-8 no-print z-50 flex flex-col gap-3 items-end">
+        <a href="https://algorah.bond/" target="_blank" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-full shadow-xl transition transform hover:scale-105 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            Visitar sitio web
+        </a>
+        <button onclick="window.print()" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full shadow-xl transition transform hover:scale-105 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            Guardar como PDF
+        </button>
+    </div>
+
+    <main class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden print:shadow-none print:rounded-none">
+
+        <!-- Header Image -->
+        <div class="h-48 w-full bg-slate-800 relative">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200&auto=format&fit=crop" alt="Carga de Vehículos Eléctricos" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 flex flex-col justify-center px-12">
+                <h2 class="text-teal-400 font-semibold tracking-wider uppercase text-sm mb-2">Propuesta Técnica y Comercial</h2>
+                <h1 class="text-3xl font-bold text-white">Plataforma de Gestión y Pagos QR para Cargadores EV</h1>
+                <p class="text-lg text-slate-300 mt-1">Dos rutas de implementación: Integración AmpUp EV Cloud (OCPP 1.6J) o Desarrollo de CSMS Propio</p>
+            </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="px-12 py-8 bg-teal-50 border-b border-teal-100 flex justify-between items-start">
+            <div>
+                <p class="text-sm text-teal-800 font-semibold uppercase tracking-wider mb-1">Preparado por</p>
+                <p class="text-lg font-bold text-slate-800">Cristian Alexander Durán Medina</p>
+                <p class="text-slate-600">Algorah</p>
+                <div class="mt-2 text-sm text-slate-600 flex flex-col gap-1">
+                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> ceo.algorah@gmail.com</span>
+                    <span class="flex items-center gap-2"><svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> +57 304 581 0485</span>
+                    <a href="https://algorah.bond/" target="_blank" class="flex items-center gap-2 text-teal-600 hover:text-teal-800 transition font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg> algorah.bond</a>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-sm text-teal-800 font-semibold uppercase tracking-wider mb-1">Para</p>
+                <p class="text-lg font-bold text-slate-800">Power Station</p>
+                <p class="text-slate-600">Javier Avendaño</p>
+                <p class="text-slate-600">Red de Cargadores Eléctricos</p>
+                <p class="text-sm text-slate-500 mt-2">1 de Agosto de 2026</p>
+            </div>
+        </div>
+
+        <div class="px-12 py-10 space-y-10">
+
+            <!-- Section 1 -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">1. Objetivo del Proyecto</h3>
+                </div>
+                <p class="leading-relaxed mb-3">La presente propuesta formaliza la integración técnica y comercial para dotar de <strong>independencia financiera y marca propia</strong> a la red de 5 cargadores de vehículos eléctricos marca <strong>AONENG (Serie ANACE1)</strong>, permitiendo el cobro directo a usuarios mediante código QR y pasarela de pagos propia.</p>
+                <p class="leading-relaxed mb-3">Existen <strong>dos caminos técnicos válidos</strong> para lograr este objetivo, y se presentan ambos a continuación para que Power Station decida según su prioridad entre velocidad de salida al mercado o independencia total de proveedores externos:</p>
+                <ul class="list-disc list-inside space-y-1 text-slate-700 mb-3">
+                    <li><strong class="text-teal-700">Opción A — Integración con AmpUp EV Cloud:</strong> se apalanca en una plataforma SaaS enterprise ya certificada (usada globalmente por marcas como Domino's, Marriott y LEGO) que actúa como servidor central CSMS. Es la ruta más rápida y de menor riesgo técnico.</li>
+                    <li><strong class="text-indigo-700">Opción B — Desarrollo de CSMS propio desde cero:</strong> se construye un servidor OCPP 1.6J propio que se comunica directamente con los cargadores AONENG, sin depender de licencias mensuales de terceros. Es la ruta con mayor independencia a largo plazo, a cambio de más tiempo y costo inicial de desarrollo.</li>
+                </ul>
+                <p class="leading-relaxed">En ambos casos, toda la recaudación ingresará de forma directa a las cuentas bancarias de Power Station, manteniendo visibilidad total de los consumos (kWh) e historial de sesiones a través de un dashboard administrativo.</p>
+            </section>
+
+            <!-- Section 2: Comparativo -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">2. Comparativo Rápido de Opciones</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <!-- Card A -->
+                    <div class="border-2 border-teal-200 rounded-xl p-5 bg-teal-50/40">
+                        <span class="inline-block bg-teal-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Opción A</span>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Integración AmpUp EV Cloud</h4>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li class="flex gap-2"><span class="text-teal-600 font-bold">✓</span> Salida a producción en <strong>11 a 15 días</strong></li>
+                            <li class="flex gap-2"><span class="text-teal-600 font-bold">✓</span> Menor riesgo técnico: protocolo OCPP ya certificado por AmpUp</li>
+                            <li class="flex gap-2"><span class="text-teal-600 font-bold">✓</span> 99.9% uptime y soporte 24/7 incluidos por el proveedor</li>
+                            <li class="flex gap-2"><span class="text-teal-600 font-bold">✓</span> Certificación de seguridad SOC 2 Type II ya vigente</li>
+                            <li class="flex gap-2"><span class="text-slate-400 font-bold">–</span> Depende de una licencia mensual en USD por cargador</li>
+                            <li class="flex gap-2"><span class="text-slate-400 font-bold">–</span> Sujeta a cambios de precio/políticas del proveedor externo</li>
+                        </ul>
+                        <p class="mt-4 text-sm text-slate-600">Honorarios de desarrollo: <strong class="text-teal-700 text-base">$1.800.000 COP</strong></p>
+                    </div>
+                    <!-- Card B -->
+                    <div class="border-2 border-indigo-200 rounded-xl p-5 bg-indigo-50/40">
+                        <span class="inline-block bg-indigo-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Opción B</span>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">CSMS Propio desde Cero</h4>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li class="flex gap-2"><span class="text-indigo-600 font-bold">✓</span> Cero licencias mensuales de un tercero (CSMS 100% propio)</li>
+                            <li class="flex gap-2"><span class="text-indigo-600 font-bold">✓</span> Control total del código, del protocolo y de la infraestructura</li>
+                            <li class="flex gap-2"><span class="text-indigo-600 font-bold">✓</span> Sin límites de crecimiento impuestos por un proveedor externo</li>
+                            <li class="flex gap-2"><span class="text-slate-400 font-bold">–</span> Salida a producción en <strong>31 a 41 días</strong></li>
+                            <li class="flex gap-2"><span class="text-slate-400 font-bold">–</span> Mayor riesgo técnico: se implementa el estándar OCPP 1.6J desde cero</li>
+                            <li class="flex gap-2"><span class="text-slate-400 font-bold">–</span> Uptime, soporte y seguridad quedan bajo responsabilidad propia (se recomienda plan de mantenimiento)</li>
+                        </ul>
+                        <p class="mt-4 text-sm text-slate-600">Honorarios de desarrollo: <strong class="text-indigo-700 text-base">$4.300.000 COP</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= OPCIÓN A ================= -->
+            <section class="border-t-4 border-teal-500 pt-8">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="bg-teal-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Opción A</span>
+                    <h3 class="text-2xl font-bold text-slate-800">Integración con AmpUp EV Cloud</h3>
+                </div>
+                <p class="leading-relaxed text-slate-600 mb-6">Para evitar desarrollos de comunicación de bajo nivel complejos y de alto riesgo, esta ruta se apalanca en la infraestructura SaaS enterprise de <strong>AmpUp EV Cloud</strong>. Esta plataforma actúa como el servidor central <strong>CSMS (Charge Station Management System)</strong> compatible con el estándar <strong>OCPP 1.6J</strong>, proveyendo un tiempo de disponibilidad del 99.9% y certificaciones de seguridad SOC 2 Type II. Sobre esta base se desarrolla una <strong>WebApp con código QR y pasarela de pagos propia</strong> conectada vía API a AmpUp.</p>
+
+                <h4 class="text-lg font-bold text-slate-800 mb-3">A.1 Alcance del Desarrollo & Flujo Operativo</h4>
+                <div class="space-y-4 mb-6">
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">A. Configuración AmpUp EV Cloud & Conexión OCPP 1.6J</h5>
+                        <p class="text-sm text-slate-600 mt-1">Aprovisionamiento de cuenta en AmpUp, generación de URL WebSocket segura (<code>wss://...</code>) e ingreso en el sistema de gestión del fabricante AONENG. Configuración de conectividad 4G LTE / SIM Card.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">B. Aplicación Web para Usuarios (App-Less QR Start)</h5>
+                        <p class="text-sm text-slate-600 mt-1">Interfaz liviana accesible desde cualquier navegador web móvil (sin descargar apps pesadas). Al escanear el QR físico de la estación, el cliente selecciona el monto o energía a cargar e inicia el proceso.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">C. Integración de Pasarela de Pagos Propia (API Hook)</h5>
+                        <p class="text-sm text-slate-600 mt-1">Integración de la pasarela comercial elegida (Wompi, Mercado Pago, Bold, PSE, etc.). Confirmado el pago, el backend invoca la API REST de AmpUp enviando la orden de inicio <code>RemoteStartTransaction</code>.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">D. Motor de Tarificación y Modelos de Cobro Flexibles</h5>
+                        <p class="text-sm text-slate-600 mt-1">Reglas de cobro configurables: <strong>por energía (kWh)</strong> con los medidores MID del cargador, <strong>por tiempo (minutos/horas)</strong>, o <strong>modelos híbridos/tarifa de inactividad (idle fees)</strong>.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">E. Dashboard Administrativo de Monitoreo</h5>
+                        <p class="text-sm text-slate-600 mt-1">Panel web con consolidación de ingresos, sesiones ejecutadas, energía total distribuida (kWh) y estado en tiempo real de los conectores.</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-slate-800 mb-3">A.2 Arquitectura Tecnológica</h4>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-teal-700 mb-1">WebApp de Cobro (QR Client)</h5>
+                        <p class="text-sm text-slate-600">Interfaz en Vue 3 + Tailwind CSS adaptada para móviles, diseñada para procesar cargas rápidas mediante QR.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-teal-700 mb-1">Backend Integrador (Laravel)</h5>
+                        <p class="text-sm text-slate-600">Recibe notificaciones de la pasarela vía Webhooks encriptados y conecta con las APIs de AmpUp.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-teal-700 mb-1">Servidor CSMS (AmpUp EV Cloud)</h5>
+                        <p class="text-sm text-slate-600">Gestión centralizada del protocolo OCPP 1.6J, telemetría, diagnósticos remotos con IA y disponibilidad 99.9%.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-teal-700 mb-1">Seguridad SOC 2 & Conexión 4G</h5>
+                        <p class="text-sm text-slate-600">Cumplimiento SOC 2 Type II, WebSockets cifrados (WSS) y conectividad 4G LTE SuperSIM en las estaciones.</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-slate-800 mb-3">A.3 Inversión y Plan de Pagos por Hitos</h4>
+                <p class="leading-relaxed mb-4">Honorarios totales de desarrollo para la Opción A: <strong class="text-xl text-teal-700">$1.800.000 COP</strong>, divididos en 3 hitos verificables:</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm">
+                        <thead>
+                            <tr class="bg-teal-700 text-white">
+                                <th class="py-3 px-4 font-semibold text-sm w-1/5">Fase</th>
+                                <th class="py-3 px-4 font-semibold text-sm">Hito de Entrega / Funcionalidad</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-center">Tiempo</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-center">%</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-right">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">1. Aprovisionamiento CSMS</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Configuración inicial en AmpUp EV Cloud, URL WebSocket <code>wss://...</code> e ingreso en la plataforma AONENG. Vinculación de las 5 estaciones.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap"><span class="block text-sm font-bold text-slate-700">3 a 4 Días</span></td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">40%</td>
+                                <td class="py-4 px-4 text-right font-bold text-teal-600 whitespace-nowrap">$720.000 COP</td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">2. WebApp & Pasarela</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Desarrollo de la WebApp con lectura de QR, UI personalizada e integración de la pasarela de pagos conectada a la API de AmpUp.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap"><span class="block text-sm font-bold text-slate-700">6 a 8 Días</span></td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">40%</td>
+                                <td class="py-4 px-4 text-right font-bold text-teal-600 whitespace-nowrap">$720.000 COP</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">3. Pruebas & Salida</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Pruebas reales de inicio/corte de energía en sitio, dashboard de ingresos y entrega de accesos.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap"><span class="block text-sm font-bold text-slate-700">2 a 3 Días</span></td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">20%</td>
+                                <td class="py-4 px-4 text-right font-bold text-teal-600 whitespace-nowrap">$360.000 COP</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-teal-50">
+                                <td colspan="2" class="py-3 px-4 font-bold text-slate-700">Total Opción A</td>
+                                <td class="py-3 px-4 text-center font-bold text-slate-700">11 a 15 días</td>
+                                <td class="py-3 px-4 text-center font-bold text-slate-700">100%</td>
+                                <td class="py-3 px-4 text-right font-bold text-teal-700">$1.800.000 COP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ================= OPCIÓN B ================= -->
+            <section class="border-t-4 border-indigo-500 pt-8 page-break">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="bg-indigo-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Opción B</span>
+                    <h3 class="text-2xl font-bold text-slate-800">Desarrollo de CSMS Propio desde Cero</h3>
+                </div>
+                <p class="leading-relaxed text-slate-600 mb-6">Esta ruta construye un servidor <strong>CSMS propio</strong> que habla directamente el protocolo <strong>OCPP 1.6J</strong> con los cargadores AONENG, sin depender de una licencia SaaS de un tercero como AmpUp. Power Station queda con la propiedad total de la infraestructura de comunicación, sin costos recurrentes de licenciamiento externo, a cambio de un mayor tiempo de desarrollo y de asumir la responsabilidad de uptime, soporte y seguridad (o contratar un plan de mantenimiento aparte).</p>
+
+                <h4 class="text-lg font-bold text-slate-800 mb-3">B.1 Alcance del Desarrollo & Flujo Operativo</h4>
+                <div class="space-y-4 mb-6">
+                    <div class="bg-slate-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">A. Servidor CSMS Propio (OCPP 1.6J sobre WebSocket)</h5>
+                        <p class="text-sm text-slate-600 mt-1">Construcción de un servidor WebSocket propio que implementa los mensajes core del estándar OCPP 1.6J: <code>BootNotification</code>, <code>Heartbeat</code>, <code>StatusNotification</code>, <code>StartTransaction</code>/<code>StopTransaction</code>, <code>MeterValues</code> y <code>RemoteStartTransaction</code>/<code>RemoteStopTransaction</code>. Se conecta directamente a los cargadores AONENG vía 4G LTE / SIM Card, sin intermediarios.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">B. Backend de Gestión, Base de Datos y Motor de Tarificación</h5>
+                        <p class="text-sm text-slate-600 mt-1">Persistencia propia de estaciones, conectores, sesiones y lecturas de energía (kWh). Motor de tarificación configurable por energía, tiempo o modelos híbridos/idle fees, igual que en la Opción A pero operando sobre datos propios en vez de la API de un tercero.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">C. Aplicación Web para Usuarios (App-Less QR Start)</h5>
+                        <p class="text-sm text-slate-600 mt-1">Misma experiencia de usuario que en la Opción A: WebApp liviana accesible desde el navegador móvil, sin apps pesadas. El cliente escanea el QR, selecciona monto/energía e inicia la carga.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">D. Integración de Pasarela de Pagos Propia</h5>
+                        <p class="text-sm text-slate-600 mt-1">Integración de la pasarela elegida (Wompi, Mercado Pago, Bold, PSE, etc.). Confirmado el pago, el propio backend envía la orden de arranque directamente al cargador vía el servidor CSMS propio, sin pasar por ningún API externo.</p>
+                    </div>
+                    <div class="bg-slate-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                        <h5 class="font-bold text-slate-800">E. Dashboard Administrativo, Pruebas en Sitio y Salida a Producción</h5>
+                        <p class="text-sm text-slate-600 mt-1">Panel de monitoreo en tiempo real construido a la medida, más una fase extendida de pruebas reales de inicio/corte de energía en las 5 estaciones antes de salir a producción, dado que el protocolo se implementa desde cero.</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-slate-800 mb-3">B.2 Arquitectura Tecnológica</h4>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-indigo-700 mb-1">WebApp de Cobro (QR Client)</h5>
+                        <p class="text-sm text-slate-600">Vue 3 + Tailwind CSS, misma UI que la Opción A, adaptada a móviles.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-indigo-700 mb-1">Backend Integrador (Laravel)</h5>
+                        <p class="text-sm text-slate-600">Recibe Webhooks de la pasarela de pagos y orquesta el motor de tarificación y las órdenes hacia el servidor CSMS propio.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-indigo-700 mb-1">Servidor CSMS Propio (Node.js/OCPP-J)</h5>
+                        <p class="text-sm text-slate-600">Servicio propio que implementa OCPP 1.6J sobre WebSocket, corre en el VPS de Power Station y se conecta directo a los cargadores AONENG.</p>
+                    </div>
+                    <div class="border border-slate-200 p-4 rounded-lg bg-white shadow-sm">
+                        <h5 class="font-bold text-indigo-700 mb-1">Seguridad, Monitoreo y Conexión 4G</h5>
+                        <p class="text-sm text-slate-600">WebSockets cifrados (WSS) propios, conectividad 4G LTE en las estaciones y monitoreo activo configurado a la medida (sin certificación SOC 2 de fábrica).</p>
+                    </div>
+                </div>
+
+                <h4 class="text-lg font-bold text-slate-800 mb-3">B.3 Inversión y Plan de Pagos por Hitos</h4>
+                <p class="leading-relaxed mb-4">Honorarios totales de desarrollo para la Opción B: <strong class="text-xl text-indigo-700">$4.300.000 COP</strong>, divididos en 4 hitos verificables (mayor cantidad de hitos dado el alcance más amplio):</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm">
+                        <thead>
+                            <tr class="bg-indigo-700 text-white">
+                                <th class="py-3 px-4 font-semibold text-sm w-1/5">Fase</th>
+                                <th class="py-3 px-4 font-semibold text-sm">Hito de Entrega / Funcionalidad</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-center">Tiempo</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-center">%</th>
+                                <th class="py-3 px-4 font-semibold text-sm text-right">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">1. Servidor CSMS (OCPP 1.6J)</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Desarrollo del servidor WebSocket propio con los mensajes core de OCPP 1.6J y conexión real con los 5 cargadores AONENG.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap"><span class="block text-sm font-bold text-slate-700">10 a 14 Días</span></td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">25%</td>
+                                <td class="py-4 px-4 text-right font-bold text-indigo-600 whitespace-nowrap">$1.075.000 COP</td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">2. Backend, BD & Tarificación</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Base de datos propia de estaciones/sesiones y motor de tarificación (kWh, tiempo, idle fees).</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap"><span class="block text-sm font-bold text-slate-700">8 a 10 Días</span></td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">25%</td>
+                                <td class="py-4 px-4 text-right font-bold text-indigo-600 whitespace-nowrap">$1.075.000 COP</td>
+                            </tr>
+                            <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">3. WebApp & Pasarela</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">WebApp con lectura de QR, UI personalizada e integración directa de la pasarela de pagos con el CSMS propio.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap"><span class="block text-sm font-bold text-slate-700">8 a 10 Días</span></td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">30%</td>
+                                <td class="py-4 px-4 text-right font-bold text-indigo-600 whitespace-nowrap">$1.290.000 COP</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-4 px-4 font-semibold text-slate-700">4. Pruebas, Dashboard & Salida</td>
+                                <td class="py-4 px-4 text-sm text-slate-600">Pruebas reales de inicio/corte en sitio, dashboard administrativo y despliegue a producción.</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap"><span class="block text-sm font-bold text-slate-700">5 a 7 Días</span></td>
+                                <td class="py-4 px-4 text-center font-bold text-slate-500">20%</td>
+                                <td class="py-4 px-4 text-right font-bold text-indigo-600 whitespace-nowrap">$860.000 COP</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-indigo-50">
+                                <td colspan="2" class="py-3 px-4 font-bold text-slate-700">Total Opción B</td>
+                                <td class="py-3 px-4 text-center font-bold text-slate-700">31 a 41 días</td>
+                                <td class="py-3 px-4 text-center font-bold text-slate-700">100%</td>
+                                <td class="py-3 px-4 text-right font-bold text-indigo-700">$4.300.000 COP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Servicios externos -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 002-2v4a2 2 0 002 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Servicios e Infraestructura Externa <span class="text-sm font-normal text-slate-500">(No incluidos en ninguna opción)</span></h3>
+                </div>
+                <p class="leading-relaxed mb-4">Los siguientes costos de infraestructura en la nube corren por cuenta directa de Power Station, y varían según la opción elegida:</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-sm font-bold text-teal-700 uppercase tracking-wider mb-2">Si se elige Opción A</p>
+                        <ul class="space-y-3">
+                            <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg">
+                                <strong class="block text-slate-800 text-sm">Licencia AmpUp EV Cloud (Plan Core)</strong>
+                                <span class="text-sm text-slate-600">Suscripción SaaS del CSMS con soporte 24/7 y 99.9% uptime (Aprox. $15–25 USD/mes por cargador).</span>
+                            </li>
+                            <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg">
+                                <strong class="block text-slate-800 text-sm">SIM 4G + VPS/Dominio</strong>
+                                <span class="text-sm text-slate-600">Datos M2M para cada cargador y un VPS liviano (Contabo/DigitalOcean) + dominio para la WebApp (Aprox. $10 USD/mes).</span>
+                            </li>
+                            <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg">
+                                <strong class="block text-slate-800 text-sm">Comisiones de Pasarela</strong>
+                                <span class="text-sm text-slate-600">Tarifa por transacción cobrada por el agregador de pagos configurado (ej. Wompi, Bold).</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-indigo-700 uppercase tracking-wider mb-2">Si se elige Opción B</p>
+                        <ul class="space-y-3">
+                            <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg">
+                                <strong class="block text-slate-800 text-sm">Sin licencia de CSMS de terceros</strong>
+                                <span class="text-sm text-slate-600">Se elimina el costo mensual de AmpUp (ahorro aprox. de $75–125 USD/mes para las 5 estaciones).</span>
+                            </li>
+                            <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg">
+                                <strong class="block text-slate-800 text-sm">SIM 4G + VPS de mayor capacidad</strong>
+                                <span class="text-sm text-slate-600">El servidor CSMS propio necesita un VPS con más recursos que en la Opción A (Aprox. $20–35 USD/mes) más dominio.</span>
+                            </li>
+                            <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg">
+                                <strong class="block text-slate-800 text-sm">Monitoreo/Respaldo (opcional recomendado)</strong>
+                                <span class="text-sm text-slate-600">Al no tener el SOC 2/uptime de un proveedor certificado, se recomienda un servicio de monitoreo y backups (Aprox. $10–15 USD/mes).</span>
+                            </li>
+                            <li class="bg-slate-50 p-4 border border-slate-100 rounded-lg">
+                                <strong class="block text-slate-800 text-sm">Comisiones de Pasarela</strong>
+                                <span class="text-sm text-slate-600">Igual que en la Opción A: tarifa por transacción del agregador de pagos elegido.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Garantías -->
+            <section>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-teal-100 p-2 rounded-lg text-teal-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Acuerdos y Garantías del Proyecto</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-bold">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Propiedad Intelectual y Credenciales</h4>
+                            <p class="text-sm text-slate-600">Al completar el plan de pagos de la opción elegida, se entrega a Power Station la propiedad total del código fuente desarrollado, accesos al servidor y llaves API asociadas.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-bold">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Garantía Técnica</h4>
+                            <p class="text-sm text-slate-600 text-justify">El desarrollo incluye <strong>90 días calendario de garantía técnica gratuita</strong> tras el despliegue a producción, cubriendo la solución de cualquier inconveniente en el código propio o interrupciones en la comunicación con las pasarelas de pago, en ambas opciones.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 font-bold">3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Escalabilidad Futura</h4>
+                            <p class="text-sm text-slate-600 text-justify">En la Opción A, nuevos cargadores se incorporan vinculándolos directamente a AmpUp. En la Opción B, el servidor CSMS propio queda estructurado para registrar y gestionar nuevas estaciones sin depender de licencias adicionales de terceros.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Validez -->
+            <section class="bg-slate-50 border border-slate-200 rounded-lg p-8 mt-12 avoid-break">
+                <div class="mb-4">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Validez de la Propuesta</h3>
+                    <p class="text-sm text-slate-600">Los costos y condiciones estipulados en esta propuesta técnica y comercial, para ambas opciones, tienen una validez de <strong>30 días calendario</strong> a partir de su fecha de emisión.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+      function trackVisit() {
+        fetch('/api/notify-visit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            page: 'Propuesta Cargadores EV Power Station (AmpUp vs CSMS Propio)',
+            location: 'No rastreado (Privacidad)',
+            ip: 'Anónima'
+          })
+        }).catch(e => console.error(e));
+      }
+      trackVisit();
+    </script>
+
+</body>
+</html>
