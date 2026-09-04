@@ -1,7 +1,7 @@
 <script setup>
 const solutions = [
   {
-    icon: 'ph-brackets-curly',
+    icon: 'ph-terminal-window',
     size: 'col-span-12 md:col-span-7',
     color: 'from-brand-primary/20 to-transparent'
   },
@@ -44,8 +44,9 @@ const solutions = [
           <div :class="['absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700', sol.color]"></div>
           
           <div class="relative z-10 flex flex-col h-full min-h-[320px]">
-            <div class="h-20 w-20 bg-brand-secondary text-white rounded-3xl flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
-              <i :class="['ph text-4xl', sol.icon]"></i>
+            <div class="h-20 w-20 bg-gradient-to-br from-brand-secondary to-obsidian text-white rounded-3xl flex items-center justify-center mb-10 shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/10 relative overflow-hidden">
+              <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <i :class="['ph-duotone text-4xl relative z-10', sol.icon]"></i>
             </div>
             
             <h3 class="text-3xl font-display font-bold text-brand-secondary mb-6">{{ $t('solutions.items.' + index + '.title') }}</h3>

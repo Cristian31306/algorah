@@ -76,26 +76,46 @@
     "explore": "Explorar Portafolio Completo",
     "items": [
       {
-        "title": "Sistema de Parqueaderos",
+        "title": "Parking Tech Bogotá",
         "metric": "Eficiencia Operativa",
-        "desc": "Automatización total de ingresos y pagos con reportes en tiempo real para grandes superficies."
+        "desc": "Automatización total de ingresos y pagos con reportes en tiempo real para red de 40+ sedes."
       },
       {
-        "title": "E-commerce Musical",
+        "title": "Audiophile Store",
         "metric": "Carga Ultra-rápida",
-        "desc": "Optimización extrema para alta conversión en catálogos masivos de instrumentos."
+        "desc": "Optimización extrema para alta conversión en catálogos masivos de instrumentos y audio premium."
       },
       {
-        "title": "Smart Finance",
+        "title": "FinTech Nexus",
         "metric": "Retención de Usuarios",
-        "desc": "Interfaz minimalista con categorización automática de gastos e ingresos."
+        "desc": "Interfaz minimalista con categorización automática de gastos e ingresos, procesando +100k transacciones."
       },
       {
-        "title": "Retail Calzado",
-        "metric": "Ventas Cruzadas",
-        "desc": "Omnicanalidad total con sincronización en tiempo real entre tiendas físicas y nube."
+        "title": "SIRAD (Sector Público)",
+        "metric": "Trazabilidad",
+        "desc": "Sistema de gestión de correspondencia con semáforo de alertas para términos legales, eliminando por completo el riesgo de vencimientos y el control manual en Excel."
       }
     ]
+  },
+  "team": {
+    "badge": "Liderazgo Táctico",
+    "title": "Ingeniería Dirigida",
+    "desc": "Detrás de cada proyecto exitoso hay un escuadrón de especialistas oculto. Como director, orquesto a un equipo élite de ingenieros y diseñadores para garantizar resultados impecables, sin excusas.",
+    "roles": {
+      "cto": "Director de Ingeniería & Fundador"
+    },
+    "squad": {
+      "title": "El Escuadrón Algorah",
+      "subtitle": "Capacidad operativa bajo demanda",
+      "dev": "Ingenieros de Software (Backend/Frontend)",
+      "design": "Diseñadores de Producto UX/UI",
+      "data": "Arquitectos de Infraestructura Cloud"
+    }
+  },
+  "testimonials": {
+    "badge": "Voz del Cliente",
+    "title": "Lo que dicen de la Forja",
+    "desc": "No tienes que creernos a nosotros. Escucha a los líderes que ya transformaron sus operaciones."
   },
   "footer": {
     "contact_badge": "Contacto Directo",
@@ -103,6 +123,6 @@
     "contact_whatsapp": "Hablemos por WhatsApp",
     "contact_response": "Respuesta promedio: 15 minutos",
     "subtitle": "Arquitectos de Software para el Futuro Digital",
-    "rights": "© {year} ALGORA SOLUTIONS. TODOS LOS DERECHOS RESERVADOS."
+    "rights": "© {year} ALGORAH. TODOS LOS DERECHOS RESERVADOS."
   }
 }

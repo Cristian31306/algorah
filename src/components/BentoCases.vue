@@ -16,9 +16,9 @@ const cases = [
     icon: 'ph-bank'
   },
   {
-    result: '+40%',
+    result: '100%',
     size: 'col-span-12 md:col-span-8',
-    icon: 'ph-sneaker'
+    icon: 'ph-folder'
   }
 ]
 </script>
@@ -40,12 +40,13 @@ const cases = [
           :key="index"
           :class="[c.size, 'group relative glass-crystal p-12 rounded-[4rem] border-brand-secondary/10 hover:border-brand-primary/40 transition-all duration-700 shadow-sm hover:shadow-2xl']"
         >
-          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-10 mb-10">
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-10 mb-10 relative z-10">
             <div class="flex items-center gap-6">
-              <div class="h-16 w-16 bg-brand-secondary text-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <i :class="['ph text-3xl', c.icon]"></i>
+              <div class="h-20 w-20 bg-gradient-to-br from-brand-secondary to-obsidian text-brand-primary rounded-3xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-500 border border-brand-secondary/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <i :class="['ph-duotone text-4xl relative z-10', c.icon]"></i>
               </div>
-              <h3 class="text-2xl font-display font-bold text-brand-secondary leading-tight">{{ $t('cases.items.' + index + '.title') }}</h3>
+              <h3 class="text-3xl font-display font-bold text-brand-secondary leading-tight max-w-[200px]">{{ $t('cases.items.' + index + '.title') }}</h3>
             </div>
             <div class="flex flex-col items-start xl:items-end">
               <span class="text-5xl font-display font-black text-brand-primary text-glow">{{ c.result }}</span>
