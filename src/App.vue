@@ -132,7 +132,7 @@ onMounted(() => {
     </footer>
     
     <!-- Legal Modals & Banners -->
-    <CookieBanner />
+    <CookieBanner @open-legal="openLegalModal" />
     <LegalModal 
       :isOpen="isLegalModalOpen" 
       :type="legalModalType" 

@@ -13,8 +13,15 @@ onMounted(() => {
   }
 })
 
+const emit = defineEmits(['open-legal'])
+
 const acceptCookies = () => {
   localStorage.setItem('algorah_cookie_consent', 'true')
+  isVisible.value = false
+}
+
+const rejectCookies = () => {
+  localStorage.setItem('algorah_cookie_consent', 'false')
   isVisible.value = false
 }
 </script>
@@ -31,13 +38,16 @@ const acceptCookies = () => {
           <p class="text-white/60 text-xs leading-relaxed mb-4">
             Utilizamos analíticas y cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra política de tratamiento de datos acorde a las normativas vigentes.
           </p>
-          <div class="flex gap-3">
+          <div class="flex flex-wrap gap-3">
             <button @click="acceptCookies" class="px-5 py-2 bg-brand-primary text-obsidian font-bold text-xs rounded-full hover:shadow-[0_0_15px_rgba(0,168,232,0.4)] hover:scale-105 transition-all">
               Aceptar Todo
             </button>
-            <a href="#" class="px-5 py-2 bg-white/5 text-white font-bold text-xs rounded-full hover:bg-white/10 transition-colors">
+            <button @click="rejectCookies" class="px-5 py-2 bg-white/5 text-white font-bold text-xs rounded-full hover:bg-white/10 transition-colors">
+              Rechazar
+            </button>
+            <button @click.prevent="emit('open-legal', 'privacy')" class="px-5 py-2 text-brand-primary font-bold text-xs hover:underline transition-colors">
               Leer Políticas
-            </a>
+            </button>
           </div>
         </div>
       </div>
