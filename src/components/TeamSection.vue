@@ -26,7 +26,7 @@
             
             <div class="relative w-full aspect-square max-w-[320px] mx-auto rounded-[2.5rem] overflow-hidden mb-8 shadow-inner border border-brand-secondary/5">
               <div class="absolute inset-0 bg-brand-secondary/10 group-hover:bg-transparent transition-colors z-10 mix-blend-multiply"></div>
-              <img src="/assets/image_cristian.png" alt="Cristian - CTO" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" />
+              <img src="/assets/image_cristian.webp" loading="lazy" alt="Cristian - CTO" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" />
               
               <div class="absolute bottom-4 right-4 h-12 w-12 bg-white/90 backdrop-blur-md rounded-2xl flex items-center justify-center z-20 shadow-lg text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors">
                 <i class="ph-duotone ph-code text-2xl"></i>

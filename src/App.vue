@@ -1,15 +1,17 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, defineAsyncComponent } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Hero from './components/Hero.vue'
-import BentoSolutions from './components/BentoSolutions.vue'
-import ProcessForge from './components/ProcessForge.vue'
-import BentoCases from './components/BentoCases.vue'
-import TeamSection from './components/TeamSection.vue'
-import Testimonials from './components/Testimonials.vue'
-import ContactForm from './components/ContactForm.vue'
-import CookieBanner from './components/CookieBanner.vue'
-import LegalModal from './components/LegalModal.vue'
+
+// Lazy Load de componentes para mejorar el rendimiento inicial (Code Splitting)
+const BentoSolutions = defineAsyncComponent(() => import('./components/BentoSolutions.vue'))
+const ProcessForge = defineAsyncComponent(() => import('./components/ProcessForge.vue'))
+const BentoCases = defineAsyncComponent(() => import('./components/BentoCases.vue'))
+const TeamSection = defineAsyncComponent(() => import('./components/TeamSection.vue'))
+const Testimonials = defineAsyncComponent(() => import('./components/Testimonials.vue'))
+const ContactForm = defineAsyncComponent(() => import('./components/ContactForm.vue'))
+const CookieBanner = defineAsyncComponent(() => import('./components/CookieBanner.vue'))
+const LegalModal = defineAsyncComponent(() => import('./components/LegalModal.vue'))
 
 const isLegalModalOpen = ref(false)
 const legalModalType = ref('privacy') // 'privacy' | 'terms'
